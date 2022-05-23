@@ -31,7 +31,7 @@ public class movement : MonoBehaviour
 
              float mouseX = Input.GetAxis("Mouse X") * _mouseSensitivity; //changed this line.
         float mouseY = Input.GetAxis("Mouse Y") * _mouseSensitivity; //changed this line.
-          xRotation -= mouseY;
+          xRotation += mouseY;
           xRotation = Mathf.Clamp(xRotation, _minCameraview, _maxCameraview);
 
           _camera.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
