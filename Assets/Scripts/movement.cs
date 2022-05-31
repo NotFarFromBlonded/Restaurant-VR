@@ -18,6 +18,7 @@ public class movement : MonoBehaviour
     void Start()
     {
          _charController = GetComponent<CharacterController>();
+          Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
