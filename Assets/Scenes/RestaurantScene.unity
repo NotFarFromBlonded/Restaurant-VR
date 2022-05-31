@@ -1206,6 +1206,7 @@ GameObject:
   - component: {fileID: 186886730}
   - component: {fileID: 186886729}
   - component: {fileID: 186886728}
+  - component: {fileID: 186886733}
   - component: {fileID: 186886732}
   m_Layer: 7
   m_Name: Customer8
@@ -1298,19 +1299,30 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 186886727}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7dacc76e79308274cb76d45f5c618684, type: 3}
+  m_Script: {fileID: 11500000, guid: 9146a1f5b0c47a247a8b9254ea69ac78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npc: {fileID: 11400000, guid: 6292e40df6bb084409d8e6fd80c25cb9, type: 2}
-  isTalking: 0
-  player: {fileID: 1069609956}
-  dialogueUI: {fileID: 911035657}
-  rc: {fileID: 1069609957}
-  npcName: {fileID: 1882659544}
-  npcDialogueBox: {fileID: 303907466}
-  i: 0
+  dialogueSystem: {fileID: 929444119}
+  Name: Customer
+  sentences:
+  - Hey!
+  - I am Customer
+--- !u!136 &186886733
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186886727}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 2
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &190593781 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4912100417643313631, guid: 5d3e6100cc8b848ddb892a9a44bd7deb, type: 3}
@@ -1789,6 +1801,7 @@ GameObject:
   - component: {fileID: 228053066}
   - component: {fileID: 228053065}
   - component: {fileID: 228053064}
+  - component: {fileID: 228053069}
   - component: {fileID: 228053068}
   m_Layer: 8
   m_Name: Cashier
@@ -1881,19 +1894,30 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 228053063}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7dacc76e79308274cb76d45f5c618684, type: 3}
+  m_Script: {fileID: 11500000, guid: 9146a1f5b0c47a247a8b9254ea69ac78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npc: {fileID: 11400000, guid: 2e34b6b1e7bc4fa488a47529c413ebc9, type: 2}
-  isTalking: 0
-  player: {fileID: 1069609956}
-  dialogueUI: {fileID: 911035657}
-  rc: {fileID: 1069609957}
-  npcName: {fileID: 1882659544}
-  npcDialogueBox: {fileID: 303907466}
-  i: 0
+  dialogueSystem: {fileID: 929444119}
+  Name: Cashier
+  sentences:
+  - Here's the total
+  - Thank you! Have a great day!
+--- !u!136 &228053069
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228053063}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 2
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &242098794
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2922,6 +2946,7 @@ GameObject:
   - component: {fileID: 336100814}
   - component: {fileID: 336100813}
   - component: {fileID: 336100812}
+  - component: {fileID: 336100817}
   - component: {fileID: 336100816}
   m_Layer: 6
   m_Name: Waiter
@@ -3014,19 +3039,31 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 336100811}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7dacc76e79308274cb76d45f5c618684, type: 3}
+  m_Script: {fileID: 11500000, guid: 9146a1f5b0c47a247a8b9254ea69ac78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npc: {fileID: 11400000, guid: 01c23625f0f4d8c4885059457a2d0f11, type: 2}
-  isTalking: 0
-  player: {fileID: 1069609956}
-  dialogueUI: {fileID: 911035657}
-  rc: {fileID: 1069609957}
-  npcName: {fileID: 1882659544}
-  npcDialogueBox: {fileID: 303907466}
-  i: 0
+  dialogueSystem: {fileID: 929444119}
+  Name: Waiter
+  sentences:
+  - 'Hi '
+  - Welcome to the Restaurant
+  - Please take a seat
+--- !u!136 &336100817
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336100811}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 2
+  m_Height: 1.9999999
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &339076087
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5922,6 +5959,7 @@ GameObject:
   - component: {fileID: 833182741}
   - component: {fileID: 833182740}
   - component: {fileID: 833182739}
+  - component: {fileID: 833182744}
   - component: {fileID: 833182743}
   m_Layer: 7
   m_Name: Customer3
@@ -6014,19 +6052,30 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 833182738}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7dacc76e79308274cb76d45f5c618684, type: 3}
+  m_Script: {fileID: 11500000, guid: 9146a1f5b0c47a247a8b9254ea69ac78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npc: {fileID: 11400000, guid: 6292e40df6bb084409d8e6fd80c25cb9, type: 2}
-  isTalking: 0
-  player: {fileID: 1069609956}
-  dialogueUI: {fileID: 911035657}
-  rc: {fileID: 1069609957}
-  npcName: {fileID: 1882659544}
-  npcDialogueBox: {fileID: 303907466}
-  i: 0
+  dialogueSystem: {fileID: 929444119}
+  Name: Customer
+  sentences:
+  - Hey!
+  - I am Customer
+--- !u!136 &833182744
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833182738}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 2
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &834207905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6214,7 +6263,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &869882114
 PrefabInstance:
@@ -6546,7 +6595,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &911035658
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6600,6 +6649,57 @@ Transform:
   - {fileID: 2932922215595587220}
   m_Father: {fileID: 57314965}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &929444118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 929444120}
+  - component: {fileID: 929444119}
+  m_Layer: 0
+  m_Name: DialogueSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &929444119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929444118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2fff51700c29014a9b353db9a04daf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: {fileID: 1882659544}
+  dialogueText: {fileID: 303907466}
+  dialogueGUI: {fileID: 911035657}
+  Names: 
+  dialogueLines: []
+  dialogueActive: 0
+  outOfRange: 1
+--- !u!4 &929444120
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929444118}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1807656758}
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &932777599
 PrefabInstance:
@@ -7143,6 +7243,7 @@ GameObject:
   - component: {fileID: 1009619323}
   - component: {fileID: 1009619322}
   - component: {fileID: 1009619321}
+  - component: {fileID: 1009619326}
   - component: {fileID: 1009619325}
   m_Layer: 7
   m_Name: Customer2
@@ -7235,19 +7336,30 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1009619320}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7dacc76e79308274cb76d45f5c618684, type: 3}
+  m_Script: {fileID: 11500000, guid: 9146a1f5b0c47a247a8b9254ea69ac78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npc: {fileID: 11400000, guid: 6292e40df6bb084409d8e6fd80c25cb9, type: 2}
-  isTalking: 0
-  player: {fileID: 1069609956}
-  dialogueUI: {fileID: 911035657}
-  rc: {fileID: 1069609957}
-  npcName: {fileID: 1882659544}
-  npcDialogueBox: {fileID: 303907466}
-  i: 0
+  dialogueSystem: {fileID: 929444119}
+  Name: Customer
+  sentences:
+  - Hey!
+  - I am Customer
+--- !u!136 &1009619326
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009619320}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 2
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1010007397 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2886191793056083285, guid: ab0ca3fd2f73d4916bb291934d99856d, type: 3}
@@ -7411,29 +7523,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 017116cb4280b48eca9d618e6bb8a86c, type: 3}
---- !u!1 &1069609956 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3666235092944794178, guid: f0dbea3f6daaa25c4ae48e5eb3dfe32a, type: 3}
-  m_PrefabInstance: {fileID: 3666235092574837919}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1069609957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1069609956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c85e8be55fa5ec41b17b6ef01270216, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isWaiter: 0
-  isCashier: 0
-  isCustomer: 0
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!1 &1081219183
 GameObject:
   m_ObjectHideFlags: 0
@@ -7446,6 +7535,7 @@ GameObject:
   - component: {fileID: 1081219186}
   - component: {fileID: 1081219185}
   - component: {fileID: 1081219184}
+  - component: {fileID: 1081219189}
   - component: {fileID: 1081219188}
   m_Layer: 7
   m_Name: Customer7
@@ -7538,19 +7628,30 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1081219183}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7dacc76e79308274cb76d45f5c618684, type: 3}
+  m_Script: {fileID: 11500000, guid: 9146a1f5b0c47a247a8b9254ea69ac78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npc: {fileID: 11400000, guid: 6292e40df6bb084409d8e6fd80c25cb9, type: 2}
-  isTalking: 0
-  player: {fileID: 1069609956}
-  dialogueUI: {fileID: 911035657}
-  rc: {fileID: 1069609957}
-  npcName: {fileID: 1882659544}
-  npcDialogueBox: {fileID: 303907466}
-  i: 0
+  dialogueSystem: {fileID: 929444119}
+  Name: Customer
+  sentences:
+  - Hey!
+  - I am Customer
+--- !u!136 &1081219189
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081219183}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 2
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1088561576
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7761,6 +7862,7 @@ GameObject:
   - component: {fileID: 1118844769}
   - component: {fileID: 1118844768}
   - component: {fileID: 1118844767}
+  - component: {fileID: 1118844772}
   - component: {fileID: 1118844771}
   m_Layer: 7
   m_Name: Customer6
@@ -7853,19 +7955,30 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1118844766}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7dacc76e79308274cb76d45f5c618684, type: 3}
+  m_Script: {fileID: 11500000, guid: 9146a1f5b0c47a247a8b9254ea69ac78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npc: {fileID: 11400000, guid: 6292e40df6bb084409d8e6fd80c25cb9, type: 2}
-  isTalking: 0
-  player: {fileID: 1069609956}
-  dialogueUI: {fileID: 911035657}
-  rc: {fileID: 1069609957}
-  npcName: {fileID: 1882659544}
-  npcDialogueBox: {fileID: 303907466}
-  i: 0
+  dialogueSystem: {fileID: 929444119}
+  Name: Customer
+  sentences:
+  - Hey!
+  - I am Customer
+--- !u!136 &1118844772
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118844766}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 2
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1126896482 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6173584134865579127, guid: e413ad08bc08c4e999e800d4695f6172, type: 3}
@@ -8298,6 +8411,7 @@ GameObject:
   - component: {fileID: 1175211742}
   - component: {fileID: 1175211741}
   - component: {fileID: 1175211740}
+  - component: {fileID: 1175211745}
   - component: {fileID: 1175211744}
   m_Layer: 7
   m_Name: Customer5
@@ -8390,19 +8504,30 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1175211739}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7dacc76e79308274cb76d45f5c618684, type: 3}
+  m_Script: {fileID: 11500000, guid: 9146a1f5b0c47a247a8b9254ea69ac78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npc: {fileID: 11400000, guid: 6292e40df6bb084409d8e6fd80c25cb9, type: 2}
-  isTalking: 0
-  player: {fileID: 1069609956}
-  dialogueUI: {fileID: 911035657}
-  rc: {fileID: 1069609957}
-  npcName: {fileID: 1882659544}
-  npcDialogueBox: {fileID: 303907466}
-  i: 0
+  dialogueSystem: {fileID: 929444119}
+  Name: Customer
+  sentences:
+  - Hey!
+  - I am Customer
+--- !u!136 &1175211745
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175211739}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 2
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1190025990 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2886191793056083285, guid: ab0ca3fd2f73d4916bb291934d99856d, type: 3}
@@ -11351,6 +11476,8 @@ GameObject:
   - component: {fileID: 1570851717}
   - component: {fileID: 1570851716}
   - component: {fileID: 1570851715}
+  - component: {fileID: 1570851719}
+  - component: {fileID: 1570851720}
   m_Layer: 9
   m_Name: Chef
   m_TagString: Untagged
@@ -11435,6 +11562,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1570851719
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570851714}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 2
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1570851720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570851714}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9146a1f5b0c47a247a8b9254ea69ac78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueSystem: {fileID: 929444119}
+  Name: 
+  sentences: []
 --- !u!1 &1571111706
 GameObject:
   m_ObjectHideFlags: 0
@@ -13578,8 +13734,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 911035658}
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_Father: {fileID: 929444120}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -13907,6 +14063,7 @@ GameObject:
   - component: {fileID: 1862856543}
   - component: {fileID: 1862856542}
   - component: {fileID: 1862856541}
+  - component: {fileID: 1862856546}
   - component: {fileID: 1862856545}
   m_Layer: 7
   m_Name: Customer4
@@ -13999,19 +14156,30 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1862856540}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7dacc76e79308274cb76d45f5c618684, type: 3}
+  m_Script: {fileID: 11500000, guid: 9146a1f5b0c47a247a8b9254ea69ac78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npc: {fileID: 11400000, guid: 6292e40df6bb084409d8e6fd80c25cb9, type: 2}
-  isTalking: 0
-  player: {fileID: 1069609956}
-  dialogueUI: {fileID: 911035657}
-  rc: {fileID: 1069609957}
-  npcName: {fileID: 1882659544}
-  npcDialogueBox: {fileID: 303907466}
-  i: 0
+  dialogueSystem: {fileID: 929444119}
+  Name: Customer
+  sentences:
+  - Hey!
+  - I am Customer
+--- !u!136 &1862856546
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862856540}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 2
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1863805488 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6403937645042727647, guid: 939acb25a987d4cd8b7f54c754182316, type: 3}
@@ -14090,6 +14258,7 @@ GameObject:
   - component: {fileID: 1867996151}
   - component: {fileID: 1867996150}
   - component: {fileID: 1867996149}
+  - component: {fileID: 1867996154}
   - component: {fileID: 1867996153}
   m_Layer: 7
   m_Name: Customer1
@@ -14182,19 +14351,30 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1867996148}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7dacc76e79308274cb76d45f5c618684, type: 3}
+  m_Script: {fileID: 11500000, guid: 9146a1f5b0c47a247a8b9254ea69ac78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npc: {fileID: 11400000, guid: 6292e40df6bb084409d8e6fd80c25cb9, type: 2}
-  isTalking: 0
-  player: {fileID: 1069609956}
-  dialogueUI: {fileID: 911035657}
-  rc: {fileID: 1069609957}
-  npcName: {fileID: 1882659544}
-  npcDialogueBox: {fileID: 303907466}
-  i: 0
+  dialogueSystem: {fileID: 929444119}
+  Name: Customer
+  sentences:
+  - Hey!
+  - I am Customer
+--- !u!136 &1867996154
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867996148}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 2
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1870943478 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5604385192542869491, guid: 8721be980d10a4f9dac00905eca498d3, type: 3}
@@ -16573,6 +16753,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3666235091211127972, guid: f0dbea3f6daaa25c4ae48e5eb3dfe32a, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3666235092944794178, guid: f0dbea3f6daaa25c4ae48e5eb3dfe32a, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
