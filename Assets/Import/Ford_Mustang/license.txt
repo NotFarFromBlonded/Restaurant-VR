@@ -1,0 +1,11 @@
+Model Information:
+* title:	Ford Mustang
+* source:	https://sketchfab.com/3d-models/ford-mustang-4540443d945f48759a46ac3a609e3153
+* author:	emreakcadesign (https://sketchfab.com/emrex365gun)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Ford Mustang" (https://sketchfab.com/3d-models/ford-mustang-4540443d945f48759a46ac3a609e3153) by emreakcadesign (https://sketchfab.com/emrex365gun) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
