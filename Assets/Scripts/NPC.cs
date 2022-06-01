@@ -28,16 +28,13 @@ public class NPC : MonoBehaviour
     {
 
         this.gameObject.GetComponent<NPC>().enabled = true;
-        
-        if ((other.gameObject.tag == "Player"))
+        dialogueSystem.InRange();
+        if ((other.gameObject.tag == "Player") && Input.GetKeyDown(KeyCode.E))
         {
             this.gameObject.GetComponent<NPC>().enabled = true;
             dialogueSystem.Names = Name;
             dialogueSystem.dialogueLines = sentences;
-            dialogueSystem.InRange();
-            dialogueSystem.Convo();
-
-            Debug.Log("Player");
+            dialogueSystem.NPCName();
         }
     }
 
