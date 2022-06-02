@@ -100,8 +100,8 @@ public class DialogueSystem : MonoBehaviour
         {
             int stringLength = stringToDisplay.Length;
             int currentCharacterIndex = 0;
-            yield return new WaitForSeconds(0);
-            dialogueText.text = stringToDisplay;
+            
+            dialogueText.text = "";
 
             while (currentCharacterIndex < stringLength)
             {
