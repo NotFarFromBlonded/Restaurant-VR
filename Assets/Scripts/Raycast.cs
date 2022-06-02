@@ -18,6 +18,7 @@ public class Raycast : MonoBehaviour
             {
 
                 isWaiter = true;
+                Debug.Log("Hit");
             }
             if (hitinfo.collider.name == "Cashier")
             {
