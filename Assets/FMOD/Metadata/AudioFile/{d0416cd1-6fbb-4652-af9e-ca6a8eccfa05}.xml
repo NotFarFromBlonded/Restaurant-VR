@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{d0416cd1-6fbb-4652-af9e-ca6a8eccfa05}">
+		<property name="assetPath">
+			<value>387313__thpsounds__city-ambience-exterior-cars-passing-by-unedited.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>196.416</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{ce1b043d-4f28-4f57-8700-f537ab35f543}</destination>
+		</relationship>
+	</object>
+</objects>

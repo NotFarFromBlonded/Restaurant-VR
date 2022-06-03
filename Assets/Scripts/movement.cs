@@ -5,6 +5,7 @@ using UnityEngine;
 public class movement : MonoBehaviour
 {
     float vertical,horizontal;
+    public bool isWalking = false;
        private float xRotation = 0f;
          Vector3 moveVector;
              [SerializeField]private float _mouseSensitivity = 50f;
@@ -46,5 +47,12 @@ public class movement : MonoBehaviour
          }
  
          _charController.Move(moveVector * Time.deltaTime);
+        if (horizontal != 0.000f || vertical != 0.000f)
+        {
+            isWalking = true;
+        } else
+        {
+            isWalking = false;
+        }
     }
 }

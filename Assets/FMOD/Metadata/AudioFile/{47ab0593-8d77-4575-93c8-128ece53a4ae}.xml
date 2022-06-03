@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{47ab0593-8d77-4575-93c8-128ece53a4ae}">
+		<property name="assetPath">
+			<value>636073__coalcon__fancy-restaurant-atmosphere.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>74.346666666666664</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{ce1b043d-4f28-4f57-8700-f537ab35f543}</destination>
+		</relationship>
+	</object>
+</objects>
