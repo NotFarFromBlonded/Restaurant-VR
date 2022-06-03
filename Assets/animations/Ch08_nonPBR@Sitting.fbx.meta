@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: fc273202dcbc1049ab46f02b3e8924cc
+guid: 1c3b26b5d61a6dfc4a8bbe45e6961757
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: Jostled Passenger
+    second: Sitting
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Jostled Passenger
+      name: Sitting
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 80
+      lastFrame: 287
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
