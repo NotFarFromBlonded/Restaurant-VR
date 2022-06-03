@@ -1,13 +1,13 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1102 &-5261408547221144185
+--- !u!1102 &-5182716522832744088
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Sitting Talking
+  m_Name: Sitting Laughing
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -20,7 +20,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: 714e9aeb96abfc31fa92368ccb9b6795, type: 3}
+  m_Motion: {fileID: -203655887218126122, guid: e542a1ae035c1d9c1a7a1bf23eae339f, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -58,11 +58,11 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: -5261408547221144185}
-    m_Position: {x: 351.77066, y: 157.19229, z: 0}
-  - serializedVersion: 1
     m_State: {fileID: 3706996946244320432}
     m_Position: {x: 200.9751, y: 237.19084, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -5182716522832744088}
+    m_Position: {x: 410, y: 100, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -72,7 +72,7 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 3706996946244320432}
+  m_DefaultState: {fileID: -5182716522832744088}
 --- !u!1102 &3706996946244320432
 AnimatorState:
   serializedVersion: 6
