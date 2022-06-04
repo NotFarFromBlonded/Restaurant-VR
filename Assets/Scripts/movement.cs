@@ -5,7 +5,7 @@ using UnityEngine;
 public class movement : MonoBehaviour
 {
     float vertical,horizontal;
-    public bool canmove =true;
+    public bool canmove;
     public bool isWalking = false;
        private float xRotation = 0f;
          Vector3 moveVector;
@@ -18,22 +18,13 @@ public class movement : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {   
+    {   canmove=true;
          _charController = GetComponent<CharacterController>();
           Cursor.lockState = CursorLockMode.Locked;
     }
 void FixedUpdate()
-{
-     if(Input.GetKeyDown(KeyCode.G)){
-            transform.localPosition=new Vector3(3.54f,0.09f,3.7f);
-                    if(canmove){
-                        canmove=false;
-                    
-                    }else{
-                        canmove=true;
-                    }
-
-        }
+{   
+     
        
 }
     // Update is called once per frame
@@ -63,6 +54,16 @@ void FixedUpdate()
              moveVector += Physics.gravity;
          }
  
+       if(Input.GetKeyDown(KeyCode.G)){
+            transform.localPosition=new Vector3(3.54f,0.09f,3.7f);
+                    if(canmove){
+                        canmove=false;
+                    
+                    }else{
+                        canmove=true;
+                    }
+
+        }
         //_charController.Move(moveVector * Time.deltaTime);
         if (horizontal != 0.000f || vertical != 0.000f)
         {
@@ -72,6 +73,5 @@ void FixedUpdate()
             isWalking = false;
         }
 
-       
     }
 }
