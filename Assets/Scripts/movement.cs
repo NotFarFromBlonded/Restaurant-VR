@@ -24,7 +24,7 @@ public class movement : MonoBehaviour
     }
 void FixedUpdate()
 {
-     if(Input.GetKeyDown(KeyCode.F)){
+     if(Input.GetKeyDown(KeyCode.G)){
             transform.localPosition=new Vector3(3.54f,0.09f,3.7f);
                     if(canmove){
                         canmove=false;
