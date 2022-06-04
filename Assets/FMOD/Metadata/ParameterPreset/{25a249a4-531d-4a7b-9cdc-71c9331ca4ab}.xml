@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{25a249a4-531d-4a7b-9cdc-71c9331ca4ab}">
+		<property name="name">
+			<value>NPCType</value>
+		</property>
+		<relationship name="folder">
+			<destination>{f03055c6-5836-4049-bd14-6da8dd8ee840}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{79a8ac40-16ea-467f-a1be-2aea2a2c87d4}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{79a8ac40-16ea-467f-a1be-2aea2a2c87d4}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>3</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
