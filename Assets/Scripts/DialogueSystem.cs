@@ -24,8 +24,10 @@ public class DialogueSystem : MonoBehaviour
     public bool dialogueActive = false;
     public bool dialogueEnded = false;
     public bool outOfRange = true;
+    public int dI;
 
-    
+    public Animator anim;
+        
 
     void Start()
     {
@@ -35,7 +37,10 @@ public class DialogueSystem : MonoBehaviour
 
     void Update()
     {
-
+        if(nameText.text == "Waiter" && dI == 3)
+        {
+            StartCoroutine(TakeASeat());
+        }
     }
 
     public void InRange()
@@ -63,20 +68,22 @@ public class DialogueSystem : MonoBehaviour
         if (outOfRange == false)
         {
             int dialogueLength = dialogueLines.Length;
-            int currentDialogueIndex = 0;
+            dI = 0;
 
-            while (currentDialogueIndex < dialogueLength || !letterIsMultiplied)
+            while (dI < dialogueLength || !letterIsMultiplied)
             {
                 if (!letterIsMultiplied)
                 {
                     letterIsMultiplied = true;
-                    StartCoroutine(DisplayString(dialogueLines[currentDialogueIndex++]));
-
-                    if (currentDialogueIndex >= dialogueLength)
+                    StartCoroutine(DisplayString(dialogueLines[dI++]));
+                    if (dI >= dialogueLength)
                     {
                         dialogueEnded = true;
                     }
+                    
                 }
+                
+                
                 yield return 0;
             }
 
@@ -141,6 +148,12 @@ public class DialogueSystem : MonoBehaviour
             letterIsMultiplied = false;
             dialogueText.text = "";
         }
+    }
+
+    private IEnumerator TakeASeat()
+    {
+        anim.SetBool("take_a_seat", true);
+        yield return 0;
     }
 
     public void DropDialogue()

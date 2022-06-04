@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class movement : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class movement : MonoBehaviour
     public float _speed =2f;
         CharacterController _charController;
        public Camera _camera;
+
+    public PlayableDirector pd;
+    public GameObject wdg;
 
     // Start is called before the first frame update
     void Start()
@@ -55,13 +59,17 @@ void FixedUpdate()
          }
  
        if(Input.GetKeyDown(KeyCode.G)){
-            transform.localPosition=new Vector3(3.54f,0.09f,3.7f);
+            
+            wdg.SetActive(false);
+            StartCoroutine(playFadeCutScene());
+            StartCoroutine(OnSeat());
                     if(canmove){
                         canmove=false;
                     
                     }else{
                         canmove=true;
                     }
+
 
         }
         //_charController.Move(moveVector * Time.deltaTime);
@@ -73,5 +81,16 @@ void FixedUpdate()
             isWalking = false;
         }
 
+    }
+
+    IEnumerator playFadeCutScene()
+    {
+        yield return new WaitForSeconds(1);
+        pd.Play();
+    }
+    IEnumerator OnSeat()
+    {
+        yield return new WaitForSeconds(3.5f);
+        transform.localPosition = new Vector3(3.2f, 0.09f, 3.7f);
     }
 }
