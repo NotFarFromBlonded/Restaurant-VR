@@ -5,6 +5,7 @@ using UnityEngine;
 public class movement : MonoBehaviour
 {
     float vertical,horizontal;
+    public bool canmove =true;
     public bool isWalking = false;
        private float xRotation = 0f;
          Vector3 moveVector;
@@ -17,19 +18,35 @@ public class movement : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
+    {   
          _charController = GetComponent<CharacterController>();
           Cursor.lockState = CursorLockMode.Locked;
     }
+void FixedUpdate()
+{
+     if(Input.GetKeyDown(KeyCode.F)){
+            transform.localPosition=new Vector3(3.54f,0.09f,3.7f);
+                    if(canmove){
+                        canmove=false;
+                    
+                    }else{
+                        canmove=true;
+                    }
 
+        }
+       
+}
     // Update is called once per frame
     void Update()
-    {
-          
- vertical = Input.GetAxis("Vertical");
-         horizontal = Input.GetAxis("Horizontal");
-        Vector3 movement = transform.forward * vertical + transform.right * horizontal; //changed this line.
-        _charController.Move(movement * Time.deltaTime * _speed);
+    {           
+             if(canmove){   
+                vertical = Input.GetAxis("Vertical");
+             horizontal = Input.GetAxis("Horizontal");
+                Vector3 movement = transform.forward * vertical + transform.right * horizontal; //changed this line.
+                  //  Debug.Log(canmove);
+               _charController.Move(movement * Time.deltaTime * _speed);
+       }
+     
 
              float mouseX = Input.GetAxis("Mouse X") * _mouseSensitivity; //changed this line.
         float mouseY = Input.GetAxis("Mouse Y") * _mouseSensitivity; //changed this line.
@@ -46,7 +63,7 @@ public class movement : MonoBehaviour
              moveVector += Physics.gravity;
          }
  
-         _charController.Move(moveVector * Time.deltaTime);
+        //_charController.Move(moveVector * Time.deltaTime);
         if (horizontal != 0.000f || vertical != 0.000f)
         {
             isWalking = true;
@@ -54,5 +71,7 @@ public class movement : MonoBehaviour
         {
             isWalking = false;
         }
+
+       
     }
 }
