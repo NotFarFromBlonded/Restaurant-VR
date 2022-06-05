@@ -40,20 +40,23 @@ public class voice_actions : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.M)){
+
             if (ispressed)
             {
+
                 ispressed = false;
                 rbg.rBGMA.setParameterByName("rAmb", 0);
-            } else
+                keywordRecognizer.Stop();
+
+            }
+            else
             {
                 ispressed = true;
                 rbg.rBGMA.setParameterByName("rAmb", 1);
+                keywordRecognizer.Start();
+                keywordRecognizer.OnPhraseRecognized += RecognizedSpeech;
             }            
         }
-        if (ispressed)
-        {
-            keywordRecognizer.Start();
-            keywordRecognizer.OnPhraseRecognized += RecognizedSpeech;
-        }
+        
     }
 }
