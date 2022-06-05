@@ -112,6 +112,12 @@
 		</relationship>
 	</object>
 	<object class="MultiSound" id="{e8d4ec9d-0fac-457c-8088-9ccd34451e9b}">
+		<property name="isAsync">
+			<value>true</value>
+		</property>
+		<property name="isCutoff">
+			<value>true</value>
+		</property>
 		<property name="length">
 			<value>1.3400000000000001</value>
 		</property>
@@ -145,6 +151,12 @@
 		</relationship>
 	</object>
 	<object class="MultiSound" id="{3777bc5c-79bf-40d5-a8de-5fab854bb2d4}">
+		<property name="isAsync">
+			<value>true</value>
+		</property>
+		<property name="isCutoff">
+			<value>true</value>
+		</property>
 		<property name="length">
 			<value>1.3400000000000001</value>
 		</property>
