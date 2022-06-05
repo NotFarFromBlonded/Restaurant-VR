@@ -8,7 +8,7 @@ public class NPC : MonoBehaviour
     
 
     public DialogueSystem dialogueSystem;
-
+    
     public string Name;
 
     [TextArea(5, 10)]
@@ -32,9 +32,33 @@ public class NPC : MonoBehaviour
         if ((other.gameObject.tag == "Player") && Input.GetKeyDown(KeyCode.E))
         {
             this.gameObject.GetComponent<NPC>().enabled = true;
+            dialogueSystem.Place3DDialogueAudio();
             dialogueSystem.Names = Name;
             dialogueSystem.dialogueLines = sentences;
             dialogueSystem.NPCName();
+        }
+
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Player" && this.gameObject.tag == "Waiter")
+        {
+            dialogueSystem.npcType = 0;
+        } else if(other.gameObject.tag == "Player" && this.gameObject.tag == "Customer:Male")
+        {
+            dialogueSystem.npcType = 1;
+            dialogueSystem.customerGender = 0;
+            
+        }
+        else if (other.gameObject.tag == "Player" && this.gameObject.tag == "Customer:Female")
+        {
+            dialogueSystem.npcType = 1;
+            dialogueSystem.customerGender = 1;
+
+        } else if(other.gameObject.tag == "Player" && this.gameObject.tag == "Cashier")
+        {
+            dialogueSystem.npcType = 2;
         }
     }
 

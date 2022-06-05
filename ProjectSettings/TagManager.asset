@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Customer
+  - Waiter
+  - Customer:Female
+  - Customer:Male
+  - Cashier
   layers:
   - Default
   - TransparentFX

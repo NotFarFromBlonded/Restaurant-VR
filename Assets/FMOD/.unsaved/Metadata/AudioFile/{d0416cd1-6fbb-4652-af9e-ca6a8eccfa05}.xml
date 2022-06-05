@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{d0416cd1-6fbb-4652-af9e-ca6a8eccfa05}">
-		<property name="assetPath">
-			<value>387313__thpsounds__city-ambience-exterior-cars-passing-by-unedited.wav</value>
-		</property>
+		<property name="assetPath" />
 		<property name="isStreaming">
 			<value>true</value>
 		</property>

@@ -26,7 +26,12 @@ public class DialogueSystem : MonoBehaviour
     public bool outOfRange = true;
     public int dI;
 
+
     public Animator anim;
+
+    private FMOD.Studio.EventInstance d;
+    public int npcType = 0;
+    public int customerGender = 0;
         
 
     void Start()
@@ -76,6 +81,7 @@ public class DialogueSystem : MonoBehaviour
                 {
                     letterIsMultiplied = true;
                     StartCoroutine(DisplayString(dialogueLines[dI++]));
+                    DialogueVoiceOver(npcType, customerGender, dI);
                     if (dI >= dialogueLength)
                     {
                         dialogueEnded = true;
@@ -171,7 +177,24 @@ public class DialogueSystem : MonoBehaviour
             dialogueActive = false;
             StopAllCoroutines();
             dialogueGUI.SetActive(false);
-            
+            dI = 0;
+            d.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         }
+    }
+
+    public void Place3DDialogueAudio()
+    {
+        d = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue");
+        d.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+    }
+
+    public void DialogueVoiceOver(int npcType, int customerGender, int dialogueIndex)
+    {
+        d.setParameterByName("NPCType", npcType);
+        d.setParameterByName("CustomerGender", customerGender);
+        d.setParameterByName("DialogueIndex", dialogueIndex);
+
+        d.start();
+        d.release();
     }
 }
