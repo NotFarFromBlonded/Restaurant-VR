@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{457fea95-f322-4c3b-bd08-215211d06a3e}">
+		<property name="name">
+			<value>rAmb</value>
+		</property>
+		<relationship name="folder">
+			<destination>{f03055c6-5836-4049-bd14-6da8dd8ee840}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{c054f574-9400-4fa5-ad9a-df27ffb14b50}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{c054f574-9400-4fa5-ad9a-df27ffb14b50}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

@@ -353,7 +353,7 @@
 			<value>1</value>
 		</property>
 		<property name="value">
-			<value>-80</value>
+			<value>-53.3333321</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{20f953ca-2bd8-4819-8d02-06c27787dee2}">
@@ -361,7 +361,7 @@
 			<value>0</value>
 		</property>
 		<property name="value">
-			<value>0</value>
+			<value>5</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{80dd4d6b-4217-4f0c-afaa-cf05e16cf040}">
@@ -369,7 +369,7 @@
 			<value>2</value>
 		</property>
 		<property name="value">
-			<value>-80</value>
+			<value>-53.3333321</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{14880752-6fe3-4b6a-a1e3-1e7d7f0546ff}">
@@ -377,7 +377,7 @@
 			<value>0</value>
 		</property>
 		<property name="value">
-			<value>-80</value>
+			<value>-53.3333321</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{882fbc97-e323-4c37-b981-11bf471fba7f}">
@@ -385,7 +385,7 @@
 			<value>1</value>
 		</property>
 		<property name="value">
-			<value>0</value>
+			<value>5</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{c9c530f8-ac09-4039-9967-22b8ff42981c}">
@@ -393,7 +393,7 @@
 			<value>2</value>
 		</property>
 		<property name="value">
-			<value>-80</value>
+			<value>-53.3333321</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{5b345616-c769-4fed-9170-5ad6843b682c}">
@@ -401,7 +401,7 @@
 			<value>0</value>
 		</property>
 		<property name="value">
-			<value>-80</value>
+			<value>-53.3333321</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{4a90db16-5f50-4b2a-aa8c-bf24ac4675c5}">
@@ -409,7 +409,7 @@
 			<value>1</value>
 		</property>
 		<property name="value">
-			<value>-80</value>
+			<value>-53.3333321</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{da023001-ff49-4c8c-a4c7-392c0e5672a3}">
@@ -417,7 +417,7 @@
 			<value>2</value>
 		</property>
 		<property name="value">
-			<value>0</value>
+			<value>5</value>
 		</property>
 	</object>
 </objects>

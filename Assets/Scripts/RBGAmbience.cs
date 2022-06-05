@@ -7,8 +7,8 @@ public class RBGAmbience : MonoBehaviour
     //public FMODUnity.StudioEventEmitter cBGMA;
     //public FMODUnity.StudioEventEmitter rBGMA;
 
-    FMOD.Studio.EventInstance rBGMA;
-    FMOD.Studio.EventInstance cBGMA;
+    public FMOD.Studio.EventInstance rBGMA;
+    public FMOD.Studio.EventInstance cBGMA;
     // Start is called before the first frame update
     void Awake()
     {

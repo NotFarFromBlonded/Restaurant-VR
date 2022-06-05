@@ -10,15 +10,17 @@ public class voice_actions : MonoBehaviour
 {   public bool ispressed;
     private KeywordRecognizer keywordRecognizer;
     private Dictionary<string, Action> actions =new Dictionary<string, Action> ();
+    public RBGAmbience rbg;
     // Start is called before the first frame update
     void Start()
     {       ispressed=false;
                 actions.Add("Two",Two);
-
+        actions.Add("One", One);
         actions.Add("Three",Three);
         keywordRecognizer =new KeywordRecognizer(actions.Keys.ToArray());
-        keywordRecognizer.OnPhraseRecognized+=RecognizedSpeech;
-
+        
+        
+        
     }
     private void RecognizedSpeech(PhraseRecognizedEventArgs speech)
     {
@@ -38,10 +40,20 @@ public class voice_actions : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.M)){
-            if(ispressed)
-            ispressed=false;
-            else
-            ispressed=true;
+            if (ispressed)
+            {
+                ispressed = false;
+                rbg.rBGMA.setParameterByName("rAmb", 0);
+            } else
+            {
+                ispressed = true;
+                rbg.rBGMA.setParameterByName("rAmb", 1);
+            }            
+        }
+        if (ispressed)
+        {
+            keywordRecognizer.Start();
+            keywordRecognizer.OnPhraseRecognized += RecognizedSpeech;
         }
     }
 }
