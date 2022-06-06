@@ -61,7 +61,7 @@ void FixedUpdate()
        if(Input.GetKeyDown(KeyCode.G)){
             
             wdg.SetActive(false);
-            StartCoroutine(playFadeCutScene());
+            StartCoroutine(playFadeCutScene(1f));
             StartCoroutine(OnSeat());
                     if(canmove){
                         canmove=false;
@@ -83,11 +83,12 @@ void FixedUpdate()
 
     }
 
-    IEnumerator playFadeCutScene()
+    public IEnumerator playFadeCutScene(float time)
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(time);
         pd.Play();
     }
+
     IEnumerator OnSeat()
     {
         yield return new WaitForSeconds(3.5f);

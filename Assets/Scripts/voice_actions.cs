@@ -16,14 +16,15 @@ public class voice_actions : MonoBehaviour
     GameObject InstantiatedGameObject;
     public List<GameObject> food;
     public GameObject foodPos;
+    movement mv;
     // Start is called before the first frame update
     void Start()
     {       ispressed=false;
-                actions.Add("Two",Two);
+                actions.Add("Two", Two);
         actions.Add("One", One);
-        actions.Add("Three",Three);
+        actions.Add("Three", Three);
         keywordRecognizer =new KeywordRecognizer(actions.Keys.ToArray());
-        
+        mv = GetComponent<movement>();
         
         
     }
@@ -33,17 +34,26 @@ public class voice_actions : MonoBehaviour
         actions[speech.text].Invoke();
     }
     public void One(){
-        InstantiatedGameObject = FoodInstantiation(food[0]);
+        
+        keywordRecognizer.Stop();
+        ispressed = false;
+        rbg.rBGMA.setParameterByName("rAmb", 0);
+        StartCoroutine(fdi(food[0]));
         Debug.Log("ek");
         
     }
     public void Two(){
-        InstantiatedGameObject = FoodInstantiation(food[1]);
+        keywordRecognizer.Stop();
+        ispressed = false;
+        rbg.rBGMA.setParameterByName("rAmb", 0);
+        StartCoroutine(fdi(food[1])); 
         Debug.Log("doo");
-        
     }
     public void Three(){
-        InstantiatedGameObject = FoodInstantiation(food[2]);
+        keywordRecognizer.Stop();
+        ispressed = false;
+        rbg.rBGMA.setParameterByName("rAmb", 0);
+        StartCoroutine(fdi(food[2]));
         Debug.Log("theen");
         
     }
@@ -58,14 +68,19 @@ public class voice_actions : MonoBehaviour
 
                     ispressed = false;
                     InstantiatedGameObject.SetActive(true);
+                    
                     rbg.rBGMA.setParameterByName("rAmb", 0);
-                    keywordRecognizer.Stop();
+                    if (keywordRecognizer.IsRunning)
+                    {
+                        keywordRecognizer.Stop();
+                    }
 
                 }
                 else
                 {
                     ispressed = true;
                     InstantiatedGameObject.SetActive(false);
+                    rm.SetActive(true);
                     rbg.rBGMA.setParameterByName("rAmb", 1);
                     keywordRecognizer.Start();
                     keywordRecognizer.OnPhraseRecognized += RecognizedSpeech;
@@ -79,8 +94,10 @@ public class voice_actions : MonoBehaviour
                     ispressed = false;
                     //currentGameObject.SetActive(true);
                     rbg.rBGMA.setParameterByName("rAmb", 0);
-                    keywordRecognizer.Stop();
-
+                    if (keywordRecognizer.IsRunning)
+                    {
+                        keywordRecognizer.Stop();
+                    }
                 }
                 else
                 {
@@ -100,9 +117,16 @@ public class voice_actions : MonoBehaviour
     {
         DestroyImmediate(InstantiatedGameObject, true);
         currentGameObject = gameObject;
-        rbg.rBGMA.setParameterByName("rAmb", 1);
-        rm.SetActive(false);
         return Instantiate(currentGameObject, foodPos.transform.position, Quaternion.identity);
-        
+    }
+
+    IEnumerator fdi(GameObject gameObject)
+    {
+        /*yield return new WaitForSeconds(1);
+        mv.pd.Play();*/
+        StartCoroutine(mv.playFadeCutScene(0f));
+        yield return new WaitForSeconds(2.5f);
+        InstantiatedGameObject = FoodInstantiation(gameObject);
+        rm.SetActive(false);
     }
 }
