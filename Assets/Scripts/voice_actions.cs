@@ -68,7 +68,8 @@ public class voice_actions : MonoBehaviour
 
                     ispressed = false;
                     InstantiatedGameObject.SetActive(true);
-                    
+                    rm.SetActive(false);
+
                     rbg.rBGMA.setParameterByName("rAmb", 0);
                     if (keywordRecognizer.IsRunning)
                     {
