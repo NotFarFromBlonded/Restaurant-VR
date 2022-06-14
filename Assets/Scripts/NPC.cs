@@ -10,6 +10,7 @@ public class NPC : MonoBehaviour
     public DialogueSystem dialogueSystem;
     
     public string Name;
+    
 
     [TextArea(5, 10)]
     public string[] sentences;
@@ -29,6 +30,7 @@ public class NPC : MonoBehaviour
 
         this.gameObject.GetComponent<NPC>().enabled = true;
         dialogueSystem.InRange();
+        
         if ((other.gameObject.tag == "Player") && Input.GetKeyDown(KeyCode.E))
         {
             this.gameObject.GetComponent<NPC>().enabled = true;
@@ -44,7 +46,15 @@ public class NPC : MonoBehaviour
     {
         if(other.gameObject.tag == "Player" && this.gameObject.tag == "Waiter")
         {
-            dialogueSystem.npcType = 0;
+            if (this.gameObject.name == "Waiter_1")
+            {
+                dialogueSystem.npcType = 3;
+            } else
+            {
+                dialogueSystem.npcType = 0;
+                dialogueSystem.waiterName = true;
+            }
+            
         } else if(other.gameObject.tag == "Player" && this.gameObject.tag == "Customer:Male")
         {
             dialogueSystem.npcType = 1;
@@ -60,6 +70,7 @@ public class NPC : MonoBehaviour
         {
             dialogueSystem.npcType = 2;
         }
+        
     }
 
     public void OnTriggerExit()

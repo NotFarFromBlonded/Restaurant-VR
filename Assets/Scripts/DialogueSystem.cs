@@ -25,7 +25,10 @@ public class DialogueSystem : MonoBehaviour
     public bool dialogueEnded = false;
     public bool outOfRange = true;
     public int dI;
+    private NPC npc;
 
+    
+    public bool waiterName = false;
 
     public Animator anim;
 
@@ -42,7 +45,7 @@ public class DialogueSystem : MonoBehaviour
 
     void Update()
     {
-        if(nameText.text == "Waiter" && dI == 3)
+        if (nameText.text == "Waiter" && dI == 3 && waiterName == true)
         {
             StartCoroutine(TakeASeat());
         }

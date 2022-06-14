@@ -19,6 +19,8 @@ public class movement : MonoBehaviour
 
     public PlayableDirector pd;
     public GameObject wdg;
+    public GameObject seatPos;
+    public bool onseat;
 
     // Start is called before the first frame update
     void Start()
@@ -59,17 +61,27 @@ void FixedUpdate()
          }
  
        if(Input.GetKeyDown(KeyCode.G)){
-            
-            wdg.SetActive(false);
-            StartCoroutine(playFadeCutScene(1f));
-            StartCoroutine(OnSeat());
-                    if(canmove){
-                        canmove=false;
-                    
-                    }else{
-                        canmove=true;
-                    }
+            if (!onseat)
+            {
+                wdg.SetActive(false);
 
+                StartCoroutine(playFadeCutScene(1f));
+                StartCoroutine(OnOffSeat(seatPos.transform.position.x, seatPos.transform.position.y, seatPos.transform.position.z));
+                
+            } else
+            {
+                StartCoroutine(playFadeCutScene(1f));
+                StartCoroutine(OnOffSeat(-26.978f, 0.721f, 5.033f)); 
+            }
+
+            if (canmove)
+            {
+                canmove = false;
+            }
+            else
+            {
+                canmove = true;
+            }
 
         }
         //_charController.Move(moveVector * Time.deltaTime);
@@ -89,9 +101,10 @@ void FixedUpdate()
         pd.Play();
     }
 
-    IEnumerator OnSeat()
+    IEnumerator OnOffSeat(float x, float y, float z)
     {
         yield return new WaitForSeconds(3.5f);
-        transform.localPosition = new Vector3(3.2f, 0.09f, 3.7f);
+        //transform.position = new Vector3(seatPos.transform.position.x, seatPos.transform.position.y, seatPos.transform.position.z);
+        transform.position = new Vector3(x, y, z);
     }
 }
