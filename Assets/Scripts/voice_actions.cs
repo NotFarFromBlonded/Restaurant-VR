@@ -13,7 +13,7 @@ public class voice_actions : MonoBehaviour
     public RBGAmbience rbg;
     public GameObject rm;
     GameObject currentGameObject;
-    GameObject InstantiatedGameObject;
+    public GameObject InstantiatedGameObject;
     public List<GameObject> food;
     public GameObject foodPos;
     movement mv;
