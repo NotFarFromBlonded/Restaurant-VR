@@ -112,9 +112,6 @@
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{aba90450-462a-4bdc-8c5f-915c3a0038b6}">
-		<property name="isAsync">
-			<value>true</value>
-		</property>
 		<property name="isCutoff">
 			<value>true</value>
 		</property>

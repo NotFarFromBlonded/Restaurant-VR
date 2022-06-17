@@ -125,9 +125,6 @@
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{6ddb820c-1e2e-40d4-a235-a610a6ce0db1}">
-		<property name="isAsync">
-			<value>true</value>
-		</property>
 		<property name="isCutoff">
 			<value>true</value>
 		</property>
@@ -161,9 +158,6 @@
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{b335b3ea-5d34-47f2-925f-d5f2572e6e4b}">
-		<property name="isAsync">
-			<value>true</value>
-		</property>
 		<property name="isCutoff">
 			<value>true</value>
 		</property>
@@ -197,9 +191,6 @@
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{0d741be2-c754-4e9c-86bd-b853ac0453a6}">
-		<property name="isAsync">
-			<value>true</value>
-		</property>
 		<property name="isCutoff">
 			<value>true</value>
 		</property>

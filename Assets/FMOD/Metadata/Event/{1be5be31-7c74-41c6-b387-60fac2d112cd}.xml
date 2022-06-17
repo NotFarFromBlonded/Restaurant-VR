@@ -128,11 +128,11 @@
 		<property name="isAsync">
 			<value>true</value>
 		</property>
-		<property name="isCutoff">
-			<value>true</value>
-		</property>
 		<property name="length">
 			<value>0.59999999999999998</value>
+		</property>
+		<property name="looping">
+			<value>true</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{a81a7b43-4d11-494b-94bc-756a3c83b342}</destination>
@@ -162,9 +162,6 @@
 	</object>
 	<object class="SingleSound" id="{f18273c3-90f5-4b97-8a43-0a733e7d208f}">
 		<property name="isAsync">
-			<value>true</value>
-		</property>
-		<property name="isCutoff">
 			<value>true</value>
 		</property>
 		<property name="length">
@@ -198,9 +195,6 @@
 	</object>
 	<object class="SingleSound" id="{997cc4b9-178e-448e-88f2-4ab6db605255}">
 		<property name="isAsync">
-			<value>true</value>
-		</property>
-		<property name="isCutoff">
 			<value>true</value>
 		</property>
 		<property name="length">

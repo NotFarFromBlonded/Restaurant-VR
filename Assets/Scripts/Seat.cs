@@ -8,9 +8,12 @@ public class Seat : MonoBehaviour
     public GameObject waiter1;
     public movement mv;
     public voice_actions va;
+    public Vector3 waiterPos;
+    //public GameObject waiter;
     // Start is called before the first frame update
     void Start()
     {
+        waiter = GameObject.Find("Waiter");
         
     }
 
@@ -24,21 +27,30 @@ public class Seat : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            waiter.SetActive(false);
             mv.onseat = true;
+            
+            waiter.SetActive(false);
         }
         
     }
 
     private void OnTriggerExit()
     {
-        waiter1.SetActive(true);
         mv.onseat = false;
         if (va.InstantiatedGameObject != null)
         {
             Destroy(va.InstantiatedGameObject);
             va.rm.SetActive(false);
+            
         }
+        waiter1.SetActive(true);
+        //StartCoroutine(menuActivate());
+    }
+
+    IEnumerator menuActivate()
+    {
+        yield return new WaitForSeconds(2.5f);
+        mv.wdg.SetActive(true);
     }
 
 }

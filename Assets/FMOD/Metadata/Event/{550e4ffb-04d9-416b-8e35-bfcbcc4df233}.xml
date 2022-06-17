@@ -147,11 +147,11 @@
 		<property name="isAsync">
 			<value>true</value>
 		</property>
-		<property name="isCutoff">
-			<value>true</value>
-		</property>
 		<property name="length">
 			<value>1.3600000000000001</value>
+		</property>
+		<property name="looping">
+			<value>true</value>
 		</property>
 		<property name="playlistMode">
 			<value>3</value>
@@ -184,9 +184,6 @@
 	</object>
 	<object class="MultiSound" id="{5c30bc0e-c017-4670-89ca-fee420ff5b54}">
 		<property name="isAsync">
-			<value>true</value>
-		</property>
-		<property name="isCutoff">
 			<value>true</value>
 		</property>
 		<property name="length">
@@ -225,9 +222,6 @@
 		<property name="isAsync">
 			<value>true</value>
 		</property>
-		<property name="isCutoff">
-			<value>true</value>
-		</property>
 		<property name="length">
 			<value>2</value>
 		</property>
@@ -264,11 +258,11 @@
 		<property name="isAsync">
 			<value>true</value>
 		</property>
-		<property name="isCutoff">
-			<value>true</value>
-		</property>
 		<property name="length">
 			<value>1.1599999999999999</value>
+		</property>
+		<property name="playlistMode">
+			<value>3</value>
 		</property>
 		<relationship name="sounds">
 			<destination>{16d7ea37-d2b3-4239-ab93-03c05cafb480}</destination>
@@ -366,7 +360,6 @@
 	</object>
 	<object class="MixerBusPanner" id="{14335717-7c8b-4e57-8420-835ac909dd64}" />
 	<object class="EventSound" id="{16d7ea37-d2b3-4239-ab93-03c05cafb480}">
-		<property name="name" />
 		<relationship name="parameters">
 			<destination>{19634a6e-1dd3-4bcc-b5f0-cdaebb64cbd1}</destination>
 		</relationship>

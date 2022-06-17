@@ -12,7 +12,7 @@ public class movement : MonoBehaviour
          Vector3 moveVector;
              [SerializeField]private float _mouseSensitivity = 50f;
     [SerializeField]private float _minCameraview = -70f, _maxCameraview = 80f;
-
+    public float timer;
     public float _speed =2f;
         CharacterController _charController;
        public Camera _camera;
@@ -59,31 +59,38 @@ void FixedUpdate()
          {
              moveVector += Physics.gravity;
          }
- 
-       if(Input.GetKeyDown(KeyCode.G)){
-            if (!onseat)
+        
+         if(timer == 0f)
+        {
+            if (Input.GetKeyDown(KeyCode.G))
             {
-                wdg.SetActive(false);
-
-                StartCoroutine(playFadeCutScene(1f));
-                StartCoroutine(OnOffSeat(seatPos.transform.position.x, seatPos.transform.position.y, seatPos.transform.position.z));
-                
-            } else
-            {
-                StartCoroutine(playFadeCutScene(1f));
-                StartCoroutine(OnOffSeat(-26.978f, 0.721f, 5.033f)); 
+                if (!onseat)
+                {
+                    wdg.SetActive(false);
+                    timer = 6f;
+                    StartCoroutine(playFadeCutScene(1f));
+                    StartCoroutine(OnOffSeat(seatPos.transform.position.x, seatPos.transform.position.y, seatPos.transform.position.z));
+                    canmove = false;
+                }
+                else if (onseat)
+                {
+                    timer = 6f;
+                    StartCoroutine(playFadeCutScene(1f));
+                    StartCoroutine(OnOffSeat(-26.978f, 0.721f, 5.033f));
+                    canmove = true;
+                }
             }
-
-            if (canmove)
-            {
-                canmove = false;
-            }
-            else
-            {
-                canmove = true;
-            }
-
         }
+
+        if (timer > 0f)
+        {
+            timer -= Time.deltaTime;
+        }
+        if (timer < 0f)
+        {
+            timer = 0f;
+        }
+       
         //_charController.Move(moveVector * Time.deltaTime);
         if (horizontal != 0.000f || vertical != 0.000f)
         {

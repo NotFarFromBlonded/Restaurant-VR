@@ -30,8 +30,6 @@ public class DialogueSystem : MonoBehaviour
     
     public bool waiterName = false;
 
-    public Animator anim;
-
     private FMOD.Studio.EventInstance d;
     public int npcType = 0;
     public int customerGender = 0;
@@ -45,10 +43,7 @@ public class DialogueSystem : MonoBehaviour
 
     void Update()
     {
-        if (nameText.text == "Waiter" && dI == 3 && waiterName == true)
-        {
-            StartCoroutine(TakeASeat());
-        }
+  
     }
 
     public void InRange()
@@ -87,6 +82,7 @@ public class DialogueSystem : MonoBehaviour
                     DialogueVoiceOver(npcType, customerGender, dI);
                     if (dI >= dialogueLength)
                     {
+                        
                         dialogueEnded = true;
                     }
                     
@@ -100,6 +96,7 @@ public class DialogueSystem : MonoBehaviour
             {
                 if (Input.GetKeyDown(DialogueInput) && dialogueEnded == false)
                 {
+                    
                     break;
                 }
                 yield return 0;
@@ -159,16 +156,12 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
-    private IEnumerator TakeASeat()
-    {
-        anim.SetBool("take_a_seat", true);
-        yield return 0;
-    }
+    
 
     public void DropDialogue()
     {
         dialogueGUI.SetActive(false);
-        
+        dI = 0;
     }
 
     public void OutOfRange()
@@ -193,11 +186,17 @@ public class DialogueSystem : MonoBehaviour
 
     public void DialogueVoiceOver(int npcType, int customerGender, int dialogueIndex)
     {
+        d.setTimelinePosition(0);
         d.setParameterByName("NPCType", npcType);
         d.setParameterByName("CustomerGender", customerGender);
         d.setParameterByName("DialogueIndex", dialogueIndex);
 
         d.start();
+        //d.release();
+    }
+
+    private void OnApplicationQuit()
+    {
         d.release();
     }
 }
