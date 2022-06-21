@@ -49,7 +49,7 @@ public class NPC : MonoBehaviour
 
 
 
-        if ((dialogueSystem.dI == 3 || dialogueSystem.dI == 4) && dialogueSystem.waiterName)
+        if ((dialogueSystem.dI == 3) && dialogueSystem.waiterName)
         {
             anim.SetBool("take_a_seat", true);
         }
