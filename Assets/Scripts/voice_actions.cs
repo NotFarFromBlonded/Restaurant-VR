@@ -57,6 +57,15 @@ public class voice_actions : MonoBehaviour
         Debug.Log("theen");
         
     }
+    public void Four()
+    {
+        keywordRecognizer.Stop();
+        ispressed = false;
+        rbg.rBGMA.setParameterByName("rAmb", 0);
+        StartCoroutine(fdi(food[3]));
+        Debug.Log("chaar");
+
+    }
     // Update is called once per frame
     void Update()
     {
