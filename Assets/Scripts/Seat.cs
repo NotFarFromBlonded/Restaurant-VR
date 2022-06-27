@@ -50,7 +50,7 @@ public class Seat : MonoBehaviour
     IEnumerator menuActivate()
     {
         yield return new WaitForSeconds(2.5f);
-        mv.wdg.SetActive(true);
+       // mv.wdg.SetActive(true);
     }
 
 }

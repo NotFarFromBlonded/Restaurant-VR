@@ -12,7 +12,7 @@ public class voice_actions : MonoBehaviour
     private Dictionary<string, Action> actions =new Dictionary<string, Action> ();
     public RBGAmbience rbg;
     public GameObject rm;
-    GameObject currentGameObject;
+    public GameObject currentGameObject;
     public GameObject InstantiatedGameObject;
     public List<GameObject> food;
     public GameObject foodPos;
@@ -106,20 +106,22 @@ public class voice_actions : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.Alpha3))
             {
                 
-                tm = 5f;
+                tm = 4.5f;
                 timerIsRunning = true;
                 Three();
             }
             else if (Input.GetKeyDown(KeyCode.Alpha4))
             {
                 
-                tm = 5f;
+                tm = 4.5f;
                 timerIsRunning = true;
                 Four();
             }
         }
 
-       
+            if(timerIsRunning==true){
+                rm.SetActive(false);
+            }
 
             if (Input.GetKeyDown(KeyCode.M) && timerIsRunning == false)
             {
@@ -127,8 +129,8 @@ public class voice_actions : MonoBehaviour
                 {
                     if (ispressed)
                     {
-
                         ispressed = false;
+
                         InstantiatedGameObject.SetActive(true);
                         rm.SetActive(false);
 
@@ -145,6 +147,8 @@ public class voice_actions : MonoBehaviour
                         InstantiatedGameObject.SetActive(false);
                         rm.SetActive(true);
                         rbg.rBGMA.setParameterByName("rAmb", 1);
+                        
+                       
                         //keywordRecognizer.Start();
                         //keywordRecognizer.OnPhraseRecognized += RecognizedSpeech;
                         
