@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Windows.Speech;
+//using UnityEngine.Windows.Speech;
 using System.Linq;
 using System;
 
 
 public class voice_actions : MonoBehaviour
 {   public bool ispressed;
-    private KeywordRecognizer keywordRecognizer;
+    //private KeywordRecognizer keywordRecognizer;
     private Dictionary<string, Action> actions =new Dictionary<string, Action> ();
     public RBGAmbience rbg;
     public GameObject rm;
@@ -17,25 +17,28 @@ public class voice_actions : MonoBehaviour
     public List<GameObject> food;
     public GameObject foodPos;
     movement mv;
+    public float tm;
+    public bool timerIsRunning;
     // Start is called before the first frame update
     void Start()
-    {       ispressed=false;
-                actions.Add("Two", Two);
-        actions.Add("One", One);
-        actions.Add("Three", Three);
-        keywordRecognizer =new KeywordRecognizer(actions.Keys.ToArray());
+    {       
+        ispressed=false;
+        //actions.Add("Two", Two);
+        //actions.Add("One", One);
+        //actions.Add("Three", Three);
+        //keywordRecognizer =new KeywordRecognizer(actions.Keys.ToArray());
         mv = GetComponent<movement>();
         
         
     }
-    private void RecognizedSpeech(PhraseRecognizedEventArgs speech)
+    /*private void RecognizedSpeech(PhraseRecognizedEventArgs speech)
     {
         //Debug.Log(speech.text);
         actions[speech.text].Invoke();
-    }
+    }*/
     public void One(){
         
-        keywordRecognizer.Stop();
+        //keywordRecognizer.Stop();
         ispressed = false;
         rbg.rBGMA.setParameterByName("rAmb", 0);
         StartCoroutine(fdi(food[0]));
@@ -43,14 +46,14 @@ public class voice_actions : MonoBehaviour
         
     }
     public void Two(){
-        keywordRecognizer.Stop();
+        //keywordRecognizer.Stop();
         ispressed = false;
         rbg.rBGMA.setParameterByName("rAmb", 0);
         StartCoroutine(fdi(food[1])); 
         Debug.Log("doo");
     }
     public void Three(){
-        keywordRecognizer.Stop();
+        //keywordRecognizer.Stop();
         ispressed = false;
         rbg.rBGMA.setParameterByName("rAmb", 0);
         StartCoroutine(fdi(food[2]));
@@ -59,7 +62,7 @@ public class voice_actions : MonoBehaviour
     }
     public void Four()
     {
-        keywordRecognizer.Stop();
+        //keywordRecognizer.Stop();
         ispressed = false;
         rbg.rBGMA.setParameterByName("rAmb", 0);
         StartCoroutine(fdi(food[3]));
@@ -69,57 +72,110 @@ public class voice_actions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.M)){
-            if (currentGameObject != null)
+        if (timerIsRunning)
+        {
+            if (tm > 0f)
             {
-                if (ispressed)
-                {
-
-                    ispressed = false;
-                    InstantiatedGameObject.SetActive(true);
-                    rm.SetActive(false);
-
-                    rbg.rBGMA.setParameterByName("rAmb", 0);
-                    if (keywordRecognizer.IsRunning)
-                    {
-                        keywordRecognizer.Stop();
-                    }
-
-                }
-                else
-                {
-                    ispressed = true;
-                    InstantiatedGameObject.SetActive(false);
-                    rm.SetActive(true);
-                    rbg.rBGMA.setParameterByName("rAmb", 1);
-                    keywordRecognizer.Start();
-                    keywordRecognizer.OnPhraseRecognized += RecognizedSpeech;
-                }
+                tm -= Time.deltaTime;
             }
             else
             {
-                if (ispressed)
-                {
+                tm = 0f;
+                timerIsRunning = false;
+            }
+        }
+        
 
-                    ispressed = false;
-                    //currentGameObject.SetActive(true);
-                    rbg.rBGMA.setParameterByName("rAmb", 0);
-                    if (keywordRecognizer.IsRunning)
+
+        if (mv.onseat && ispressed)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                
+                tm = 5f;
+                timerIsRunning = true;
+                One();
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                
+                tm = 5f;
+                timerIsRunning = true;
+                Two();
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                
+                tm = 5f;
+                timerIsRunning = true;
+                Three();
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                
+                tm = 5f;
+                timerIsRunning = true;
+                Four();
+            }
+        }
+
+       
+
+            if (Input.GetKeyDown(KeyCode.M) && timerIsRunning == false)
+            {
+                if (currentGameObject != null)
+                {
+                    if (ispressed)
                     {
-                        keywordRecognizer.Stop();
+
+                        ispressed = false;
+                        InstantiatedGameObject.SetActive(true);
+                        rm.SetActive(false);
+
+                        rbg.rBGMA.setParameterByName("rAmb", 0);
+                        /*if (keywordRecognizer.IsRunning)
+                        {
+                            keywordRecognizer.Stop();
+                        }*/
+
+                    }
+                    else
+                    {
+                        ispressed = true;
+                        InstantiatedGameObject.SetActive(false);
+                        rm.SetActive(true);
+                        rbg.rBGMA.setParameterByName("rAmb", 1);
+                        //keywordRecognizer.Start();
+                        //keywordRecognizer.OnPhraseRecognized += RecognizedSpeech;
+                        
                     }
                 }
                 else
                 {
-                    ispressed = true;
-                    //currentGameObject.SetActive(false);
-                    rbg.rBGMA.setParameterByName("rAmb", 1);
-                    keywordRecognizer.Start();
-                    keywordRecognizer.OnPhraseRecognized += RecognizedSpeech;
+                    if (ispressed)
+                    {
+
+                        ispressed = false;
+                        //currentGameObject.SetActive(true);
+                        rbg.rBGMA.setParameterByName("rAmb", 0);
+                        /*if (keywordRecognizer.IsRunning)
+                        {
+                            keywordRecognizer.Stop();
+                        }*/
+                    }
+                    else
+                    {
+                        ispressed = true;
+                        //currentGameObject.SetActive(false);
+                        rbg.rBGMA.setParameterByName("rAmb", 1);
+                        //keywordRecognizer.Start();
+                        //keywordRecognizer.OnPhraseRecognized += RecognizedSpeech;
+                    }
                 }
+
             }
-                       
-        }
+        
+        
         
     }
 
