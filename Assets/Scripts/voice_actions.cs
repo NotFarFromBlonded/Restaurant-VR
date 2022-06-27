@@ -92,14 +92,14 @@ public class voice_actions : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
                 
-                tm = 5f;
+                tm = 4.5f;
                 timerIsRunning = true;
                 One();
             }
             else if (Input.GetKeyDown(KeyCode.Alpha2))
             {
                 
-                tm = 5f;
+                tm = 4.5f;
                 timerIsRunning = true;
                 Two();
             }
@@ -121,9 +121,10 @@ public class voice_actions : MonoBehaviour
 
             if(timerIsRunning==true){
                 rm.SetActive(false);
+                InstantiatedGameObject.SetActive(true);
             }
 
-            if (Input.GetKeyDown(KeyCode.M) && timerIsRunning == false)
+            if (Input.GetKeyDown(KeyCode.M) && timerIsRunning == false && mv.onseat)
             {
                 if (currentGameObject != null)
                 {
