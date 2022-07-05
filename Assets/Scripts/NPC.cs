@@ -16,12 +16,14 @@ public class NPC : MonoBehaviour
     public GameObject waiter;
     public GameObject waiter1;
 
+    public float radius;
+
     [TextArea(5, 10)]
     public string[] sentences;
 
     void Start()
     {
-        dialogueSystem = FindObjectOfType<DialogueSystem>().GetComponent<DialogueSystem>();
+        //dialogueSystem = FindObjectOfType<DialogueSystem>().GetComponent<DialogueSystem>();
         
     }
 
@@ -35,6 +37,8 @@ public class NPC : MonoBehaviour
 
         this.gameObject.GetComponent<NPC>().enabled = true;
         dialogueSystem.InRange();
+
+        
 
         if ((other.gameObject.tag == "Player") && Input.GetKeyDown(KeyCode.E))
         {
