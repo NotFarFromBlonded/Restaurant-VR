@@ -695,7 +695,7 @@ GameObject:
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6307835305095745932
 Transform:
   m_ObjectHideFlags: 0
@@ -808,7 +808,11 @@ MonoBehaviour:
   waiter1: {fileID: 6307835305095745922}
   sentences:
   - Did you like the food?
-  - 'Thank you for coming! '
+  - This is the total
+  - 'Please pay the bill
+
+'
+  - "Thank you for coming! \n"
   - 'See you soon!
 
 '

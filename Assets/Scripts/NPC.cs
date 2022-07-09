@@ -8,6 +8,7 @@ public class NPC : MonoBehaviour
     
 
     public DialogueSystem dialogueSystem;
+    public movement mv;
     
     public string Name;
 
@@ -15,6 +16,7 @@ public class NPC : MonoBehaviour
 
     public GameObject waiter;
     public GameObject waiter1;
+    public GameObject bill;
 
     [TextArea(5, 10)]
     public string[] sentences;
@@ -58,13 +60,42 @@ public class NPC : MonoBehaviour
             anim.SetBool("take_a_seat", false);
         }
 
-        if(this.gameObject.name == "Waiter_1" && dialogueSystem.dI == 3 && Input.GetKeyDown(KeyCode.Space))
+        if(this.gameObject.name == "Waiter_1" && dialogueSystem.dI == 5 && Input.GetKeyDown(KeyCode.Space))
         {
             anim.SetBool("take_a_seat", false);
             waiter.SetActive(true);
             waiter1.SetActive(false);
            
         }
+        if (this.gameObject.name == "Waiter_1" && dialogueSystem.dI == 1 && Input.GetKeyDown(KeyCode.Space))
+        {
+            anim.SetBool("take_a_seat", false);
+            bill.SetActive(true);
+
+        }
+        if (this.gameObject.name == "Waiter_1" && dialogueSystem.dI == 3 && Input.GetKeyDown(KeyCode.Space))
+        {
+            anim.SetBool("take_a_seat", false);
+            bill.SetActive(false);
+
+        }
+
+        if(this.gameObject.name == "TableCustomer" && dialogueSystem.dI == 2 && Input.GetKeyDown(KeyCode.Space))
+        {
+            StartCoroutine(mv.TCSintantiator());
+            mv.TCSinstantiated = true;
+        }
+
+        if(this.gameObject.name == "TableCustomerSeated" && dialogueSystem.dI == 2 && Input.GetKeyDown(KeyCode.Space))
+        {
+            
+            
+                
+            StartCoroutine(mv.TCSdestroyer());
+            mv.TCSinstantiated = false;
+
+
+        } 
     }
 
     public void OnTriggerEnter(Collider other)
@@ -98,6 +129,16 @@ public class NPC : MonoBehaviour
         } else if(other.gameObject.tag == "Player" && this.gameObject.tag == "Cashier")
         {
             dialogueSystem.npcType = 2;
+        } else if(other.gameObject.tag == "Player" && this.gameObject.tag == "TableCustomer")
+        {
+            if(this.gameObject.name == "TableCustomerSeated")
+            {
+                dialogueSystem.npcType = 5;
+            } else
+            {
+                dialogueSystem.npcType = 4;
+            }
+            
         }
         
     }

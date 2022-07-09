@@ -21,6 +21,11 @@ public class movement : MonoBehaviour
     public GameObject wdg;
     public GameObject seatPos;
     public bool onseat;
+    public bool TCinstantiated;
+    public bool TCSinstantiated;
+    public GameObject tableCust;
+    public GameObject tableCustSeated;
+
 
     // Start is called before the first frame update
     void Start()
@@ -80,6 +85,21 @@ void FixedUpdate()
                     canmove = true;
                 }
             }
+
+            if (Input.GetKeyDown(KeyCode.C) && onseat && !TCSinstantiated)
+            {
+                timer = 5f;
+                if (!TCinstantiated)
+                {
+                    StartCoroutine(TCinstantiator());
+                    TCinstantiated = true;
+                }
+                else
+                {
+                    StartCoroutine(TCdestroyer());
+                    TCinstantiated = false;
+                }
+            }
         }
 
         if (timer > 0f)
@@ -100,6 +120,8 @@ void FixedUpdate()
             isWalking = false;
         }
 
+         
+
     }
 
     public IEnumerator playFadeCutScene(float time)
@@ -113,5 +135,33 @@ void FixedUpdate()
         yield return new WaitForSeconds(3.5f);
         //transform.position = new Vector3(seatPos.transform.position.x, seatPos.transform.position.y, seatPos.transform.position.z);
         transform.position = new Vector3(x, y, z);
+    }
+
+    public IEnumerator TCinstantiator (){
+        StartCoroutine(playFadeCutScene(0f));
+        yield return new WaitForSeconds(2.5f);
+        tableCust.SetActive(true);
+    }
+    public IEnumerator TCdestroyer()
+    {
+        StartCoroutine(playFadeCutScene(0f));
+        yield return new WaitForSeconds(2.5f);
+        wdg.SetActive(false);
+        tableCust.SetActive(false);
+    }
+
+    public IEnumerator TCSintantiator()
+    {
+        StartCoroutine(playFadeCutScene(0f));
+        yield return new WaitForSeconds(2.5f);
+        tableCust.SetActive(false);
+        tableCustSeated.SetActive(true);
+    }
+
+    public IEnumerator TCSdestroyer()
+    {
+        StartCoroutine(playFadeCutScene(0f));
+        yield return new WaitForSeconds(2.5f);
+        tableCustSeated.SetActive(false);
     }
 }
