@@ -18,6 +18,8 @@ public class NPC : MonoBehaviour
     public GameObject waiter1;
     public GameObject bill;
 
+    public bool waiter_1;
+
     [TextArea(5, 10)]
     public string[] sentences;
 
@@ -29,6 +31,11 @@ public class NPC : MonoBehaviour
 
     void Update()
     {
+        if (waiter_1)
+        {
+            dialogueSystem.npcType = 3;
+            waiter_1 = false;
+        }
         
     }
 
@@ -105,6 +112,7 @@ public class NPC : MonoBehaviour
             
             if (this.gameObject.name == "Waiter_1")
             {
+                waiter_1 = true;
                 dialogueSystem.npcType = 3;
             }
             else
@@ -115,21 +123,25 @@ public class NPC : MonoBehaviour
             }
 
 
-        } else if(other.gameObject.tag == "Player" && this.gameObject.tag == "Customer:Male")
+        }
+        if(other.gameObject.tag == "Player" && this.gameObject.tag == "Customer:Male")
         {
             dialogueSystem.npcType = 1;
             dialogueSystem.customerGender = 0;
             
         }
-        else if (other.gameObject.tag == "Player" && this.gameObject.tag == "Customer:Female")
+        if (other.gameObject.tag == "Player" && this.gameObject.tag == "Customer:Female")
         {
             dialogueSystem.npcType = 1;
             dialogueSystem.customerGender = 1;
 
-        } else if(other.gameObject.tag == "Player" && this.gameObject.tag == "Cashier")
+        }
+        if(other.gameObject.tag == "Player" && this.gameObject.tag == "Cashier")
         {
             dialogueSystem.npcType = 2;
-        } else if(other.gameObject.tag == "Player" && this.gameObject.tag == "TableCustomer")
+        }
+        
+        if(other.gameObject.tag == "Player" && this.gameObject.tag == "TableCustomer")
         {
             if(this.gameObject.name == "TableCustomerSeated")
             {

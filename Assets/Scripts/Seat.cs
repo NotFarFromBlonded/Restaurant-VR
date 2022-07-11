@@ -41,7 +41,7 @@ public class Seat : MonoBehaviour
         {
             Destroy(va.InstantiatedGameObject);
             va.rm.SetActive(false);
-            
+            //va.InstantiatedGameObject = null;
         }
         waiter1.SetActive(true);
         //StartCoroutine(menuActivate());

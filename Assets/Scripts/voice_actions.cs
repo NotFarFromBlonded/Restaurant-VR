@@ -144,16 +144,29 @@ public class voice_actions : MonoBehaviour
                     }
                     else
                     {
+                        if(InstantiatedGameObject == null)
+                    {
                         ispressed = true;
-                        InstantiatedGameObject.SetActive(false);
+                        //InstantiatedGameObject.SetActive(false);
                         rm.SetActive(true);
                         rbg.rBGMA.setParameterByName("rAmb", 1);
-                        
-                       
-                        //keywordRecognizer.Start();
-                        //keywordRecognizer.OnPhraseRecognized += RecognizedSpeech;
-                        
+                    } else
+                    {
+                        ispressed = true;
+                    InstantiatedGameObject.SetActive(false);
+                    rm.SetActive(true);
+                    rbg.rBGMA.setParameterByName("rAmb", 1);
                     }
+                    /*ispressed = true;
+                    InstantiatedGameObject.SetActive(false);
+                    rm.SetActive(true);
+                    rbg.rBGMA.setParameterByName("rAmb", 1);*/
+
+
+                    //keywordRecognizer.Start();
+                    //keywordRecognizer.OnPhraseRecognized += RecognizedSpeech;
+
+                }
                 }
                 else
                 {

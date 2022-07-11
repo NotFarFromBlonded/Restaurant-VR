@@ -187,6 +187,7 @@ public class DialogueSystem : MonoBehaviour
     public void DialogueVoiceOver(int npcType, int customerGender, int dialogueIndex)
     {
         d.setTimelinePosition(0);
+        Debug.Log(npcType);
         d.setParameterByName("NPCType", npcType);
         d.setParameterByName("CustomerGender", customerGender);
         d.setParameterByName("DialogueIndex", dialogueIndex);
