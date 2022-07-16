@@ -42,7 +42,7 @@ public class voice_actions : MonoBehaviour
         ispressed = false;
         rbg.rBGMA.setParameterByName("rAmb", 0);
         StartCoroutine(fdi(food[0]));
-        Debug.Log("ek");
+        //Debug.Log("ek");
         
     }
     public void Two(){
@@ -50,14 +50,14 @@ public class voice_actions : MonoBehaviour
         ispressed = false;
         rbg.rBGMA.setParameterByName("rAmb", 0);
         StartCoroutine(fdi(food[1])); 
-        Debug.Log("doo");
+        //Debug.Log("doo");
     }
     public void Three(){
         //keywordRecognizer.Stop();
         ispressed = false;
         rbg.rBGMA.setParameterByName("rAmb", 0);
         StartCoroutine(fdi(food[2]));
-        Debug.Log("theen");
+        //Debug.Log("theen");
         
     }
     public void Four()

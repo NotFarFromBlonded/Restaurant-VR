@@ -45,7 +45,7 @@ public class NPC : MonoBehaviour
         this.gameObject.GetComponent<NPC>().enabled = true;
         dialogueSystem.InRange();
 
-        if ((other.gameObject.tag == "Player") && Input.GetKeyDown(KeyCode.E))
+        if ((other.gameObject.tag == "Player") && Input.GetKeyDown(KeyCode.E) && mv.timer == 0f)
         {
             //this.gameObject.GetComponent<NPC>().enabled = true;
             dialogueSystem.Place3DDialogueAudio();
@@ -90,6 +90,7 @@ public class NPC : MonoBehaviour
         if(this.gameObject.name == "TableCustomer" && dialogueSystem.dI == 2 && Input.GetKeyDown(KeyCode.Space))
         {
             StartCoroutine(mv.TCSintantiator());
+            mv.timer = 3.5f;
             mv.TCSinstantiated = true;
         }
 
@@ -99,6 +100,7 @@ public class NPC : MonoBehaviour
             
                 
             StartCoroutine(mv.TCSdestroyer());
+            mv.timer = 3.5f;
             mv.TCSinstantiated = false;
 
 

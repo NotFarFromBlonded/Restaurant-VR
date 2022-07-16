@@ -72,14 +72,14 @@ void FixedUpdate()
                 if (!onseat)
                 {
                     wdg.SetActive(false);
-                    timer = 6f;
+                    timer = 4.5f;
                     StartCoroutine(playFadeCutScene(1f));
                     StartCoroutine(OnOffSeat(seatPos.transform.position.x, seatPos.transform.position.y, seatPos.transform.position.z));
                     canmove = false;
                 }
                 else if (onseat)
                 {
-                    timer = 6f;
+                    timer = 4.5f;
                     StartCoroutine(playFadeCutScene(1f));
                     StartCoroutine(OnOffSeat(-26.978f, 0.721f, 5.033f));
                     canmove = true;
@@ -88,7 +88,7 @@ void FixedUpdate()
 
             if (Input.GetKeyDown(KeyCode.C) && onseat && !TCSinstantiated)
             {
-                timer = 5f;
+                timer = 3.5f;
                 if (!TCinstantiated)
                 {
                     StartCoroutine(TCinstantiator());
