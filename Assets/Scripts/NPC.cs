@@ -12,20 +12,23 @@ public class NPC : MonoBehaviour
     
     public string Name;
 
-    public Animator anim;
+    public Animator anim,head_move;
+    public GameObject Player;
 
     public GameObject waiter;
     public GameObject waiter1;
     public GameObject bill;
 
-    public bool waiter_1;
+    public bool waiter_1,headnodd;
 
     [TextArea(5, 10)]
     public string[] sentences;
+    public bool rotateplayer=false;
 
     void Start()
     {
         dialogueSystem = FindObjectOfType<DialogueSystem>().GetComponent<DialogueSystem>();
+        headnodd=false;
         
     }
 
@@ -55,12 +58,24 @@ public class NPC : MonoBehaviour
 
 
         }
+        if ((dialogueSystem.dI == 1) && dialogueSystem.waiterName)
+        {
+            if(!headnodd){
+                head_move.SetTrigger("isheadmoving");
+                headnodd=true;
+            }
 
+        }
+        // else{
+        //     head_move.SetBool("isheadmoving",false);
+        // }
 
 
         if ((dialogueSystem.dI == 3) && dialogueSystem.waiterName)
         {
             anim.SetBool("take_a_seat", true);
+             rotateplayer=true;
+            headnodd=false;
         }
         else
         {
@@ -84,6 +99,10 @@ public class NPC : MonoBehaviour
         {
             anim.SetBool("take_a_seat", false);
             bill.SetActive(false);
+            // Quaternion tablerot= Quaternion.Euler(new Vector3(0,137f,0));
+            // Player.transform.rotation=tablerot;
+           
+            
 
         }
 
