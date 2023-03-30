@@ -12,7 +12,7 @@ public class NPC : MonoBehaviour
     
     public string Name;
 
-    public Animator anim,head_move;
+    public Animator anim,head_move,head_move_stranger,head_move_stranger_seated;
     public GameObject Player;
 
     public GameObject waiter;
@@ -24,6 +24,7 @@ public class NPC : MonoBehaviour
     [TextArea(5, 10)]
     public string[] sentences;
     public bool rotateplayer=false;
+    public bool nodded =false;
 
     void Start()
     {
@@ -105,19 +106,46 @@ public class NPC : MonoBehaviour
             
 
         }
-
-        if(this.gameObject.name == "TableCustomer" && dialogueSystem.dI == 2 && Input.GetKeyDown(KeyCode.Space))
-        {
-            StartCoroutine(mv.TCSintantiator());
-            mv.timer = 3.5f;
-            mv.TCSinstantiated = true;
+        
+        if(this.gameObject.name == "TableCustomer" && dialogueSystem.dI == 3&& !nodded){
+           head_move_stranger.SetTrigger("head_nod");
+           nodded =true;
         }
 
-        if(this.gameObject.name == "TableCustomerSeated" && dialogueSystem.dI == 2 && Input.GetKeyDown(KeyCode.Space))
+        if(this.gameObject.name == "TableCustomer" && dialogueSystem.dI == 3 && Input.GetKeyDown(KeyCode.Space))
+        {   
+        
+            StartCoroutine(mv.TCSintantiator());
+            mv.timer = 3.5f;    
+            mv.TCSinstantiated = true;
+            nodded=false;
+
+        }
+        if(this.gameObject.name == "TableCustomerSeated" && dialogueSystem.dI == 4)
+        {
+           nodded=false;
+        }
+        
+        
+        if(this.gameObject.name == "TableCustomerSeated" && dialogueSystem.dI == 5 && !nodded)
+        {
+           head_move_stranger_seated.SetTrigger("head_nod");
+           nodded =true;
+        }
+        if(this.gameObject.name == "TableCustomerSeated" && dialogueSystem.dI == 5 && Input.GetKeyDown(KeyCode.Space))
+        {
+            nodded=false;
+        }
+        if(this.gameObject.name == "TableCustomerSeated" && dialogueSystem.dI == 6 && !nodded)
+        {
+           head_move_stranger_seated.SetTrigger("head_nod");
+           nodded =true;
+        }
+        if(this.gameObject.name == "TableCustomerSeated" && dialogueSystem.dI == 6 && Input.GetKeyDown(KeyCode.Space))
         {
             
-            
-                
+           
+            nodded=false;    
             StartCoroutine(mv.TCSdestroyer());
             mv.timer = 3.5f;
             mv.TCSinstantiated = false;

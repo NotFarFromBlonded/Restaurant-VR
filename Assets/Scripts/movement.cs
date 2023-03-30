@@ -113,6 +113,7 @@ void FixedUpdate()
                     StartCoroutine(playFadeCutScene(1f));
                     StartCoroutine(OnOffSeat(seatPos.transform.position.x, seatPos.transform.position.y, seatPos.transform.position.z));
                     canmove = false;
+                    onseat=true;
                 }
                 else if (onseat)
                 {
@@ -120,11 +121,13 @@ void FixedUpdate()
                     StartCoroutine(playFadeCutScene(1f));
                     StartCoroutine(OnOffSeat(-26.978f, 0.721f, 5.033f));
                     canmove = true;
+                    onseat=false;
                 }
             }
 
             if (Input.GetKeyDown(KeyCode.C) && onseat && !TCSinstantiated)
             {
+                
                 timer = 3.5f;
                 if (!TCinstantiated)
                 {

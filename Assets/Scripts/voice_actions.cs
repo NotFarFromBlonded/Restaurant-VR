@@ -18,7 +18,7 @@ public class voice_actions : MonoBehaviour
     public GameObject foodPos;
     movement mv;
     public float tm;
-    public bool timerIsRunning;
+    public bool timerIsRunning,done;
     // Start is called before the first frame update
     void Start()
     {       
@@ -28,6 +28,7 @@ public class voice_actions : MonoBehaviour
         //actions.Add("Three", Three);
         //keywordRecognizer =new KeywordRecognizer(actions.Keys.ToArray());
         mv = GetComponent<movement>();
+        done=false;
         
         
     }
@@ -35,41 +36,8 @@ public class voice_actions : MonoBehaviour
     {
         //Debug.Log(speech.text);
         actions[speech.text].Invoke();
-    }*/
-    public void One(){
-        
-        //keywordRecognizer.Stop();
-        ispressed = false;
-        rbg.rBGMA.setParameterByName("rAmb", 0);
-        StartCoroutine(fdi(food[0]));
-        //Debug.Log("ek");
-        
-    }
-    public void Two(){
-        //keywordRecognizer.Stop();
-        ispressed = false;
-        rbg.rBGMA.setParameterByName("rAmb", 0);
-        StartCoroutine(fdi(food[1])); 
-        //Debug.Log("doo");
-    }
-    public void Three(){
-        //keywordRecognizer.Stop();
-        ispressed = false;
-        rbg.rBGMA.setParameterByName("rAmb", 0);
-        StartCoroutine(fdi(food[2]));
-        //Debug.Log("theen");
-        
-    }
-    public void Four()
-    {
-        //keywordRecognizer.Stop();
-        ispressed = false;
-        rbg.rBGMA.setParameterByName("rAmb", 0);
-        StartCoroutine(fdi(food[3]));
-        Debug.Log("chaar");
 
-    }
-    // Update is called once per frame
+    }*/
     void Update()
     {
         if (timerIsRunning)
@@ -95,6 +63,7 @@ public class voice_actions : MonoBehaviour
                 tm = 4.5f;
                 timerIsRunning = true;
                 One();
+
             }
             else if (Input.GetKeyDown(KeyCode.Alpha2))
             {
@@ -119,10 +88,7 @@ public class voice_actions : MonoBehaviour
             }
         }
 
-            if(timerIsRunning==true){
-                rm.SetActive(false);
-                InstantiatedGameObject.SetActive(true);
-            }
+           
 
             if (Input.GetKeyDown(KeyCode.M) && timerIsRunning == false && mv.onseat)
             {
@@ -193,14 +159,57 @@ public class voice_actions : MonoBehaviour
 
             }
         
+          if(timerIsRunning==true&&done){
+                rm.SetActive(false);
+                InstantiatedGameObject.SetActive(true);
+                done=false;
+            }
         
+    }
+    public void One(){
         
+        //keywordRecognizer.Stop();
+        ispressed = false;
+        rbg.rBGMA.setParameterByName("rAmb", 0);
+        StartCoroutine(fdi(food[0]));
+        Debug.Log("ek");
+        
+    }
+    public void Two(){
+        //keywordRecognizer.Stop();
+        ispressed = false;
+        rbg.rBGMA.setParameterByName("rAmb", 0);
+        StartCoroutine(fdi(food[1])); 
+        //Debug.Log("doo");
+    }
+    public void Three(){
+        //keywordRecognizer.Stop();
+        ispressed = false;
+        rbg.rBGMA.setParameterByName("rAmb", 0);
+        StartCoroutine(fdi(food[2]));
+        //Debug.Log("theen");
+        
+    }
+    public void Four()
+    {
+        //keywordRecognizer.Stop();
+        ispressed = false;
+        rbg.rBGMA.setParameterByName("rAmb", 0);
+        StartCoroutine(fdi(food[3]));
+        Debug.Log("chaar");
+
+    }
+    // Update is called once per frame
+    
+    void LateUpdate(){
+       
     }
 
     GameObject FoodInstantiation(GameObject gameObject)
     {
         DestroyImmediate(InstantiatedGameObject, true);
         currentGameObject = gameObject;
+
         return Instantiate(currentGameObject, foodPos.transform.position, Quaternion.identity);
     }
 
@@ -210,7 +219,13 @@ public class voice_actions : MonoBehaviour
         mv.pd.Play();*/
         StartCoroutine(mv.playFadeCutScene(0f));
         yield return new WaitForSeconds(2.5f);
+        Debug.Log("yaha abh");
+
         InstantiatedGameObject = FoodInstantiation(gameObject);
+
+        Debug.Log("kttm");
+
         rm.SetActive(false);
+       done=true;
     }
 }
