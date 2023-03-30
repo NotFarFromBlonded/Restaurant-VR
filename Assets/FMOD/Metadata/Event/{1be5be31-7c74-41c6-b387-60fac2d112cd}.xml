@@ -84,7 +84,7 @@
 			<destination>{0f362133-83d6-47f5-9272-44d86a7ab92e}</destination>
 		</relationship>
 		<relationship name="modules">
-			<destination>{997cc4b9-178e-448e-88f2-4ab6db605255}</destination>
+			<destination>{8b4e6ca1-a651-4386-881c-a69d6ac040ac}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{39fcc18e-c584-45ee-8ae6-609d3c7b52b3}</destination>
@@ -94,7 +94,7 @@
 		<relationship name="modules">
 			<destination>{b98e86f1-f061-4c07-a293-95dd14896925}</destination>
 			<destination>{f18273c3-90f5-4b97-8a43-0a733e7d208f}</destination>
-			<destination>{997cc4b9-178e-448e-88f2-4ab6db605255}</destination>
+			<destination>{8b4e6ca1-a651-4386-881c-a69d6ac040ac}</destination>
 		</relationship>
 	</object>
 	<object class="ParameterProxy" id="{418ea2fa-0c90-4029-9eee-593ccfc0a991}">
@@ -193,15 +193,12 @@
 			<destination>{9466f698-4c03-4ae6-85a1-088c829af52a}</destination>
 		</relationship>
 	</object>
-	<object class="SingleSound" id="{997cc4b9-178e-448e-88f2-4ab6db605255}">
-		<property name="isAsync">
-			<value>true</value>
-		</property>
+	<object class="SingleSound" id="{8b4e6ca1-a651-4386-881c-a69d6ac040ac}">
 		<property name="length">
-			<value>1.056</value>
+			<value>1.8</value>
 		</property>
 		<relationship name="audioFile">
-			<destination>{b766ea9d-b334-4c87-ba05-cb18e2c4003d}</destination>
+			<destination>{56dbe4ce-eec7-45a9-a950-ba24a1f45e7f}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{39fcc18e-c584-45ee-8ae6-609d3c7b52b3}">
@@ -530,7 +527,7 @@
 			<value>3</value>
 		</property>
 		<property name="value">
-			<value>0</value>
+			<value>-8</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{92a40517-d1d0-48e6-b354-2b51701711d6}">
